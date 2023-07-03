@@ -11,10 +11,15 @@ struct ContentView: View {
     
     @State var number = "0"
     @State var size = 50
+    
     @State var min = 10
     @State var max = 150
-    @State var textMin = ""
-    @State var textMax = ""
+    @State var sizeMin = 50
+    @State var sizeMax = 150
+    
+    @State var textFieldMin = ""
+    @State var textFieldMax = ""
+
     
     var body: some View {
         VStack(alignment: .center) {
@@ -25,7 +30,7 @@ struct ContentView: View {
             .frame(width: 300, height: 300, alignment: .center)
             VStack {
                 Button {
-                    size = Int.random(in: 50...150)
+                    size = Int.random(in: sizeMin...sizeMax)
                     number = String(Int.random(in: min...max))
                     
                 } label: {
@@ -39,15 +44,20 @@ struct ContentView: View {
                 VStack {
                     HStack(spacing: 50){
                         
-                        TextField("Minimum value", text: $textMin)
+                        TextField("Minimum value", text: $textFieldMin)
                             
-                        TextField("Maximum value", text: $textMax)
+                        TextField("Maximum value", text: $textFieldMax)
                             
                     }
                     .padding(.horizontal, 50.0)
                     Button {
-                        min = Int(textMin) ?? 10
-                        max = Int(textMax) ?? 150
+                        min = Int(textFieldMin) ?? 10
+                        max = Int(textFieldMax) ?? 150
+                        if max >= 9999 {
+                            sizeMax = sizeMax / 2
+                        } else {
+                            sizeMax = 150
+                        }
                     } label: {
                         Text("Set boundaries")
                             .foregroundColor(.red)
