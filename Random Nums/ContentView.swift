@@ -9,62 +9,93 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var number = "0"
-    @State var size = 50
-    
-    @State var min = 10
-    @State var max = 150
-    @State var sizeMin = 50
-    @State var sizeMax = 150
-    
+    @StateObject var viewModel: RandomNumViewModel
+
     @State var textFieldMin = ""
     @State var textFieldMax = ""
-
+    @State private var isShowAlert = false
+//    @State private var isShowSetValueButton = false // нужно придумать как спрятать кнопку во время того как выставленны дефолтные значения
     
+
     var body: some View {
         VStack(alignment: .center) {
             VStack {
-                Text(number)
-                    .font(.custom("Hex", size: CGFloat(size)))
+                Text(viewModel.randomNums.randomNums)
+                    .font(.custom("Hex", size: CGFloat(viewModel.randomNums.randomSize)))
             }
             .frame(width: 300, height: 300, alignment: .center)
             VStack {
-                Button {
-                    size = Int.random(in: sizeMin...sizeMax)
-                    number = String(Int.random(in: min...max))
-                    
-                } label: {
-                    Text("Click to get the number")
-                }   .foregroundColor(.black)
-                    .font(.title)
-                    .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20))
-                    .background(Capsule().stroke(.black, lineWidth: 4))
-                    .cornerRadius(30)
+                
                 
                 VStack {
                     HStack(spacing: 50){
-                        
-                        TextField("Minimum value", text: $textFieldMin)
+                        VStack(alignment: .leading){
+                            Text("От: \(viewModel.randomNums.minNums)")
                             
-                        TextField("Maximum value", text: $textFieldMax)
+                            TextField("Минимум", text: $textFieldMin)
+                        }
+                        VStack(alignment: .leading) {
+                            Text("До: \(viewModel.randomNums.maxNums)")
+                            TextField("Максимум", text: $textFieldMax)
+                        }
                             
                     }
                     .padding(.horizontal, 50.0)
+                    
                     Button {
-                        min = Int(textFieldMin) ?? 10
-                        max = Int(textFieldMax) ?? 150
-                        if max >= 9999 {
-                            sizeMax = sizeMax / 2
+                            viewModel.randomNums.minNums = Int(textFieldMin) ?? 1
+                            viewModel.randomNums.maxNums = Int(textFieldMax) ?? 100
+                        
+                        if viewModel.randomNums.minNums >= viewModel.randomNums.maxNums {
+                            viewModel.randomNums.minNums = 1
+                            viewModel.randomNums.maxNums = 100
+                            isShowAlert.toggle()
+                            
+                        }
+//                        }
+                        textFieldMax = ""
+                        textFieldMin = ""
+                        
+                        if viewModel.randomNums.maxNums >= 9999 {
+                            viewModel.randomNums.sizeFontMax = viewModel.randomNums.sizeFontMax / 2
                         } else {
-                            sizeMax = 150
+                            viewModel.randomNums.sizeFontMax = 150
                         }
                     } label: {
-                        Text("Set boundaries")
-                            .foregroundColor(.red)
-                            .font(.title)
-                            .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
-                            .background(Capsule().stroke(.red, lineWidth: 3))
-                    }.padding()
+                        if textFieldMin.isEmpty && textFieldMax.isEmpty {
+                            Text("Значения по умолчанию")
+                                .frame(width: 300)
+                                .foregroundColor(.red)
+                                .font(.title2)
+                                .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
+                                .background(Capsule().stroke(.red, lineWidth: 2))
+                        } else {
+                            Text("Установить значение")
+                                .frame(width: 300)
+                                .foregroundColor(.green)
+                                .font(.title)
+                                .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
+                                .background(Capsule().stroke(.green, lineWidth: 2))
+                        }
+                    }.alert("Вы ввели неверные значения минимума и максимума! \nПопробуйте снова.", isPresented: $isShowAlert, actions: {
+                        Button("Oк") { }
+                    })
+                    .padding()
+
+                    Button {
+                        viewModel.randomNums.spinRundomSize()
+                        
+                    } label: {
+                        Text("Получить число")
+                    }   .foregroundColor(.black)
+                        .frame(width: 300)
+                        .font(.title)
+                        .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
+                        .background(Capsule().stroke(.black, lineWidth: 4))
+                        .cornerRadius(30)
+                    
+                    
+                    
                 }
             }
             
@@ -76,6 +107,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: RandomNumViewModel(randomNums: RandomNumsModel(randomNums: "0", randomSize: 100)))
     }
 }
