@@ -11,7 +11,7 @@ import SwiftUI
 struct Random_NumsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: RandomNumViewModel(randomNums: RandomNumsModel(randomNums: "0", randomSize: 10)))
+            ContentView(viewModel: RandomNumViewModel(randomNums: RandomNumsModel()))
         }
     }
 }

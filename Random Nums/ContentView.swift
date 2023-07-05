@@ -14,16 +14,24 @@ struct ContentView: View {
     @State var textFieldMin = ""
     @State var textFieldMax = ""
     @State private var isShowAlert = false
-//    @State private var isShowSetValueButton = false // нужно придумать как спрятать кнопку во время того как выставленны дефолтные значения
+    @State private var isShowNum = false
+    @FocusState private var keyIsFocused: Bool
     
 
     var body: some View {
         VStack(alignment: .center) {
-            VStack {
-                Text(viewModel.randomNums.randomNums)
-                    .font(.custom("Hex", size: CGFloat(viewModel.randomNums.randomSize)))
-            }
-            .frame(width: 300, height: 300, alignment: .center)
+            
+            
+                VStack {
+                    if isShowNum {
+                        Text(viewModel.randomNums.randomNum)
+                            .font(.custom("Hex", size: CGFloat(viewModel.randomNums.randomSize)))
+                        
+                    }
+                }
+                .frame(width: 300, height: 300, alignment: .center)
+            
+            
             VStack {
                 
                 
@@ -33,10 +41,14 @@ struct ContentView: View {
                             Text("От: \(viewModel.randomNums.minNums)")
                             
                             TextField("Минимум", text: $textFieldMin)
+                                .keyboardType(.numberPad)
+                                .focused($keyIsFocused)
                         }
                         VStack(alignment: .leading) {
                             Text("До: \(viewModel.randomNums.maxNums)")
                             TextField("Максимум", text: $textFieldMax)
+                                .keyboardType(.numberPad)
+                                .focused($keyIsFocused)
                         }
                             
                     }
@@ -55,6 +67,7 @@ struct ContentView: View {
 //                        }
                         textFieldMax = ""
                         textFieldMin = ""
+                        keyIsFocused = false
                         
                         if viewModel.randomNums.maxNums >= 9999 {
                             viewModel.randomNums.sizeFontMax = viewModel.randomNums.sizeFontMax / 2
@@ -69,6 +82,7 @@ struct ContentView: View {
                                 .font(.title2)
                                 .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
                                 .background(Capsule().stroke(.red, lineWidth: 2))
+                                
                         } else {
                             Text("Установить значение")
                                 .frame(width: 300)
@@ -76,6 +90,7 @@ struct ContentView: View {
                                 .font(.title)
                                 .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
                                 .background(Capsule().stroke(.green, lineWidth: 2))
+                            
                         }
                     }.alert("Вы ввели неверные значения минимума и максимума! \nПопробуйте снова.", isPresented: $isShowAlert, actions: {
                         Button("Oк") { }
@@ -83,7 +98,9 @@ struct ContentView: View {
                     .padding()
 
                     Button {
-                        viewModel.randomNums.spinRundomSize()
+                        isShowNum = true
+                        keyIsFocused = false
+                        viewModel.spinRundomSize()
                         
                     } label: {
                         Text("Получить число")
@@ -107,6 +124,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: RandomNumViewModel(randomNums: RandomNumsModel(randomNums: "0", randomSize: 100)))
+        ContentView(viewModel: RandomNumViewModel(randomNums: RandomNumsModel()))
     }
 }

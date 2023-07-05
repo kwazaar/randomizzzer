@@ -10,10 +10,25 @@ import Foundation
 
 
 class RandomNumViewModel: ObservableObject {
+    
     @Published var randomNums: RandomNumsModel
-    static let shared = RandomNumsModel(randomNums: "0", randomSize: 10)
+
     
     init(randomNums: RandomNumsModel) {
         self.randomNums = randomNums
     }
+
+    
+    func spinRundomSize () {
+        
+        randomNums.randomNum = String(Int.random(in: randomNums.minNums...randomNums.maxNums))
+        randomNums.randomSize = Int.random(in: randomNums.sizeFontMin...randomNums.sizeFontMax)
+        
+    }
+    
+    static let shared = RandomNumsModel()
+    
+
+
+    
 }
