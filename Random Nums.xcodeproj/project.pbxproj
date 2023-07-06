@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED0BA7C62A57489D00474F06 /* ViewModifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BA7C52A57489D00474F06 /* ViewModifer.swift */; };
 		ED16851D2A536845005F7607 /* Random_NumsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16851C2A536845005F7607 /* Random_NumsApp.swift */; };
 		ED16851F2A536845005F7607 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16851E2A536845005F7607 /* ContentView.swift */; };
 		ED1685212A536847005F7607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1685202A536847005F7607 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED0BA7C52A57489D00474F06 /* ViewModifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifer.swift; sourceTree = "<group>"; };
 		ED1685192A536845005F7607 /* Random Nums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Random Nums.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED16851C2A536845005F7607 /* Random_NumsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random_NumsApp.swift; sourceTree = "<group>"; };
 		ED16851E2A536845005F7607 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			children = (
 				ED16851C2A536845005F7607 /* Random_NumsApp.swift */,
 				ED16851E2A536845005F7607 /* ContentView.swift */,
+				ED0BA7C52A57489D00474F06 /* ViewModifer.swift */,
 				EDCD1A902A54956900BB2F0F /* RandomNums.swift */,
 				EDCD1A922A549CAE00BB2F0F /* RandomNumViewModel.swift */,
 				ED1685202A536847005F7607 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED0BA7C62A57489D00474F06 /* ViewModifer.swift in Sources */,
 				EDCD1A932A549CAE00BB2F0F /* RandomNumViewModel.swift in Sources */,
 				EDCD1A912A54956900BB2F0F /* RandomNums.swift in Sources */,
 				ED16851F2A536845005F7607 /* ContentView.swift in Sources */,

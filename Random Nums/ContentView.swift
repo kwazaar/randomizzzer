@@ -22,7 +22,7 @@ struct ContentView: View {
         VStack(alignment: .center) {
             
             
-                VStack {
+            VStack {
                     if isShowNum {
                         Text(viewModel.randomNums.randomNum)
                             .font(.custom("Hex", size: CGFloat(viewModel.randomNums.randomSize)))
@@ -31,28 +31,27 @@ struct ContentView: View {
                 }
                 .frame(width: 300, height: 300, alignment: .center)
             
-            
             VStack {
-                
-                
                 VStack {
-                    HStack(spacing: 50){
-                        VStack(alignment: .leading){
-                            Text("От: \(viewModel.randomNums.minNums)")
-                            
-                            TextField("Минимум", text: $textFieldMin)
-                                .keyboardType(.numberPad)
-                                .focused($keyIsFocused)
-                        }
+                    HStack {
                         VStack(alignment: .leading) {
-                            Text("До: \(viewModel.randomNums.maxNums)")
-                            TextField("Максимум", text: $textFieldMax)
+                            Text("Минимум: \(viewModel.randomNums.minNums)")
+                            
+                            TextField("Введите значение", text: $textFieldMin)
                                 .keyboardType(.numberPad)
                                 .focused($keyIsFocused)
-                        }
+                        }.modifier(customTextFieldViewModifer(roundedCornes: 15, startColor: Color(hue: 1.0, saturation: 0.0, brightness: 0.95), endColor: .white, textColor: Color.gray))
+            
+                        VStack(alignment: .trailing) {
+                            Text("Максимум: \(viewModel.randomNums.maxNums)")
+                                .multilineTextAlignment(.trailing)
+                            TextField("Введите значение", text: $textFieldMax)
+                                .keyboardType(.numberPad)
+                                .focused($keyIsFocused)
+                                .multilineTextAlignment(.trailing)
+                        }.modifier(customTextFieldViewModifer(roundedCornes: 15, startColor: .white, endColor: Color(hue: 1.0, saturation: 0.0, brightness: 0.95), textColor: Color.gray))
                             
                     }
-                    .padding(.horizontal, 50.0)
                     
                     Button {
                             viewModel.randomNums.minNums = Int(textFieldMin) ?? 1
@@ -62,37 +61,30 @@ struct ContentView: View {
                             viewModel.randomNums.minNums = 1
                             viewModel.randomNums.maxNums = 100
                             isShowAlert.toggle()
-                            
                         }
-//                        }
+                        
                         textFieldMax = ""
                         textFieldMin = ""
                         keyIsFocused = false
                         
-                        if viewModel.randomNums.maxNums >= 9999 {
-                            viewModel.randomNums.sizeFontMax = viewModel.randomNums.sizeFontMax / 2
-                        } else {
-                            viewModel.randomNums.sizeFontMax = 150
-                        }
+                        viewModel.chekSizeNums()
                     } label: {
                         if textFieldMin.isEmpty && textFieldMax.isEmpty {
                             Text("Значения по умолчанию")
-                                .frame(width: 300)
                                 .foregroundColor(.red)
-                                .font(.title2)
                                 .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
                                 .background(Capsule().stroke(.red, lineWidth: 2))
                                 
                         } else {
                             Text("Установить значение")
-                                .frame(width: 300)
                                 .foregroundColor(.green)
-                                .font(.title)
-                                .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
+                                .padding(EdgeInsets(top: 8, leading: 30, bottom: 8, trailing: 30))
                                 .background(Capsule().stroke(.green, lineWidth: 2))
                             
                         }
-                    }.alert("Вы ввели неверные значения минимума и максимума! \nПопробуйте снова.", isPresented: $isShowAlert, actions: {
+                    }
+                    .modifier(customButtonViewModifer(widthFrame: 350, textFont: .title))
+                    .alert("Вы ввели неверные значения минимума и максимума! \nПопробуйте снова.", isPresented: $isShowAlert, actions: {
                         Button("Oк") { }
                     })
                     .padding()
@@ -104,10 +96,9 @@ struct ContentView: View {
                         
                     } label: {
                         Text("Получить число")
-                    }   .foregroundColor(.black)
-                        .frame(width: 300)
-                        .font(.title)
-                        .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
+                    }.modifier(customButtonViewModifer(widthFrame: 300, textFont: .title))
+                        .foregroundColor(.black)
+                        .padding(EdgeInsets(top: 8, leading: 15, bottom: 8, trailing: 15))
                         .background(Capsule().stroke(.black, lineWidth: 4))
                         .cornerRadius(30)
                     
