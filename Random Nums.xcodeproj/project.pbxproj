@@ -12,6 +12,7 @@
 		ED16851F2A536845005F7607 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16851E2A536845005F7607 /* ContentView.swift */; };
 		ED1685212A536847005F7607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1685202A536847005F7607 /* Assets.xcassets */; };
 		ED1685242A536847005F7607 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1685232A536847005F7607 /* Preview Assets.xcassets */; };
+		EDB469202A5BBD530013EC9C /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4691F2A5BBD530013EC9C /* CellView.swift */; };
 		EDCD1A912A54956900BB2F0F /* RandomNums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD1A902A54956900BB2F0F /* RandomNums.swift */; };
 		EDCD1A932A549CAE00BB2F0F /* RandomNumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD1A922A549CAE00BB2F0F /* RandomNumViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -23,6 +24,7 @@
 		ED16851E2A536845005F7607 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ED1685202A536847005F7607 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED1685232A536847005F7607 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EDB4691F2A5BBD530013EC9C /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		EDCD1A902A54956900BB2F0F /* RandomNums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNums.swift; sourceTree = "<group>"; };
 		EDCD1A922A549CAE00BB2F0F /* RandomNumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +61,7 @@
 			children = (
 				ED16851C2A536845005F7607 /* Random_NumsApp.swift */,
 				ED16851E2A536845005F7607 /* ContentView.swift */,
+				EDB4691F2A5BBD530013EC9C /* CellView.swift */,
 				ED0BA7C52A57489D00474F06 /* ViewModifer.swift */,
 				EDCD1A902A54956900BB2F0F /* RandomNums.swift */,
 				EDCD1A922A549CAE00BB2F0F /* RandomNumViewModel.swift */,
@@ -148,6 +151,7 @@
 			files = (
 				ED0BA7C62A57489D00474F06 /* ViewModifer.swift in Sources */,
 				EDCD1A932A549CAE00BB2F0F /* RandomNumViewModel.swift in Sources */,
+				EDB469202A5BBD530013EC9C /* CellView.swift in Sources */,
 				EDCD1A912A54956900BB2F0F /* RandomNums.swift in Sources */,
 				ED16851F2A536845005F7607 /* ContentView.swift in Sources */,
 				ED16851D2A536845005F7607 /* Random_NumsApp.swift in Sources */,

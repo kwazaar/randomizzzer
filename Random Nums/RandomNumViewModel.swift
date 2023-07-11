@@ -12,18 +12,28 @@ import Foundation
 class RandomNumViewModel: ObservableObject {
     
     @Published var randomNums: RandomNumsModel
+    @Published var num: Int
+    @Published var arrayNums = [Int]()
+    let number: String
     
 
     
-    init(randomNums: RandomNumsModel) {
+    init(randomNums: RandomNumsModel, num: Int, number: String) {
         self.randomNums = randomNums
+        self.num = num
+        self.number = number
     }
 
     
     func spinRundomSize () {
         
-        randomNums.randomNum = String(Int.random(in: randomNums.minNums...randomNums.maxNums))
+        num = randomNums.randomNum
         randomNums.randomSize = Int.random(in: randomNums.sizeFontMin...randomNums.sizeFontMax)
+        arrayNums.insert(num, at: 0)
+        if arrayNums.count > 30 {
+            arrayNums.removeLast()
+        }
+        
         
     }
     func chekSizeNums () {

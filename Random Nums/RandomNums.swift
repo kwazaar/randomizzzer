@@ -11,7 +11,9 @@ import SwiftUI
 
 struct RandomNumsModel {
     
-    var randomNum: String = "0"
+    var randomNum: Int {
+        get { Int.random(in: minNums...maxNums) }
+    }
     var randomSize: Int = 30
     var sizeFontMin: Int = 50
     var sizeFontMax: Int = 150

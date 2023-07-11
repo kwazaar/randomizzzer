@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var viewModel: RandomNumViewModel
-
     @State var textFieldMin = ""
     @State var textFieldMax = ""
     @State private var isShowAlert = false
@@ -24,15 +23,25 @@ struct ContentView: View {
             
             VStack {
                     if isShowNum {
-                        Text(viewModel.randomNums.randomNum)
+                        Text("\(viewModel.num)")
                             .font(.custom("Hex", size: CGFloat(viewModel.randomNums.randomSize)))
                         
                     }
                 }
                 .frame(width: 300, height: 300, alignment: .center)
-            
+            Spacer()
             VStack {
                 VStack {
+                    ScrollView(.horizontal){
+                        LazyHStack {
+                            ForEach(0..<viewModel.arrayNums.count, id: \.description) { item in
+                                CellView(number: String(self.viewModel.arrayNums[item]))
+                            }
+                        }
+                    }
+                    .modifier(customTextFieldViewModifer(roundedCornes: 15, startColor: Color(hue: 1.0, saturation: 0.0, brightness: 0.95), endColor: .white, textColor: Color.gray))
+                    .frame(width: UIScreen.main.bounds.width , height: 100)
+
                     HStack {
                         VStack(alignment: .leading) {
                             Text("Минимум: \(viewModel.randomNums.minNums)")
@@ -106,7 +115,7 @@ struct ContentView: View {
                     
                 }
             }
-            
+
         }
         
         
@@ -115,6 +124,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: RandomNumViewModel(randomNums: RandomNumsModel()))
+        ContentView(viewModel: RandomNumViewModel(randomNums: RandomNumsModel(), num: 3, number: "3"))
     }
 }
