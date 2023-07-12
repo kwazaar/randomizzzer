@@ -15,6 +15,7 @@
 		EDB469202A5BBD530013EC9C /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4691F2A5BBD530013EC9C /* CellView.swift */; };
 		EDCD1A912A54956900BB2F0F /* RandomNums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD1A902A54956900BB2F0F /* RandomNums.swift */; };
 		EDCD1A932A549CAE00BB2F0F /* RandomNumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD1A922A549CAE00BB2F0F /* RandomNumViewModel.swift */; };
+		EDEFB9D52A5EDB15001FCEC8 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEFB9D42A5EDB15001FCEC8 /* FirstView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		EDB4691F2A5BBD530013EC9C /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		EDCD1A902A54956900BB2F0F /* RandomNums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNums.swift; sourceTree = "<group>"; };
 		EDCD1A922A549CAE00BB2F0F /* RandomNumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumViewModel.swift; sourceTree = "<group>"; };
+		EDEFB9D42A5EDB15001FCEC8 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				ED16851E2A536845005F7607 /* ContentView.swift */,
 				EDB4691F2A5BBD530013EC9C /* CellView.swift */,
 				ED0BA7C52A57489D00474F06 /* ViewModifer.swift */,
+				EDEFB9D42A5EDB15001FCEC8 /* FirstView.swift */,
 				EDCD1A902A54956900BB2F0F /* RandomNums.swift */,
 				EDCD1A922A549CAE00BB2F0F /* RandomNumViewModel.swift */,
 				ED1685202A536847005F7607 /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDEFB9D52A5EDB15001FCEC8 /* FirstView.swift in Sources */,
 				ED0BA7C62A57489D00474F06 /* ViewModifer.swift in Sources */,
 				EDCD1A932A549CAE00BB2F0F /* RandomNumViewModel.swift in Sources */,
 				EDB469202A5BBD530013EC9C /* CellView.swift in Sources */,
@@ -299,9 +303,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "maxOS.Random-Nums";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -329,9 +336,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "maxOS.Random-Nums";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
