@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		ED0BA7C62A57489D00474F06 /* ViewModifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0BA7C52A57489D00474F06 /* ViewModifer.swift */; };
 		ED16851D2A536845005F7607 /* Random_NumsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16851C2A536845005F7607 /* Random_NumsApp.swift */; };
-		ED16851F2A536845005F7607 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16851E2A536845005F7607 /* ContentView.swift */; };
+		ED16851F2A536845005F7607 /* RandomNumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED16851E2A536845005F7607 /* RandomNumView.swift */; };
 		ED1685212A536847005F7607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1685202A536847005F7607 /* Assets.xcassets */; };
 		ED1685242A536847005F7607 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1685232A536847005F7607 /* Preview Assets.xcassets */; };
 		ED23B17B2A60806900D4877E /* RandomPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED23B17A2A60806900D4877E /* RandomPhotoView.swift */; };
+		ED719D6C2A651D050077D462 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED719D6B2A651D050077D462 /* ImagePicker.swift */; };
+		ED719D6E2A6524410077D462 /* ImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED719D6D2A6524410077D462 /* ImageCellView.swift */; };
 		EDB469202A5BBD530013EC9C /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4691F2A5BBD530013EC9C /* CellView.swift */; };
 		EDCD1A912A54956900BB2F0F /* RandomNums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD1A902A54956900BB2F0F /* RandomNums.swift */; };
 		EDCD1A932A549CAE00BB2F0F /* RandomNumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD1A922A549CAE00BB2F0F /* RandomNumViewModel.swift */; };
@@ -23,10 +25,12 @@
 		ED0BA7C52A57489D00474F06 /* ViewModifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifer.swift; sourceTree = "<group>"; };
 		ED1685192A536845005F7607 /* Random Nums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Random Nums.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED16851C2A536845005F7607 /* Random_NumsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random_NumsApp.swift; sourceTree = "<group>"; };
-		ED16851E2A536845005F7607 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ED16851E2A536845005F7607 /* RandomNumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumView.swift; sourceTree = "<group>"; };
 		ED1685202A536847005F7607 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED1685232A536847005F7607 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ED23B17A2A60806900D4877E /* RandomPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoView.swift; sourceTree = "<group>"; };
+		ED719D6B2A651D050077D462 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		ED719D6D2A6524410077D462 /* ImageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellView.swift; sourceTree = "<group>"; };
 		EDB4691F2A5BBD530013EC9C /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		EDCD1A902A54956900BB2F0F /* RandomNums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNums.swift; sourceTree = "<group>"; };
 		EDCD1A922A549CAE00BB2F0F /* RandomNumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumViewModel.swift; sourceTree = "<group>"; };
@@ -64,11 +68,13 @@
 			isa = PBXGroup;
 			children = (
 				ED16851C2A536845005F7607 /* Random_NumsApp.swift */,
-				ED16851E2A536845005F7607 /* ContentView.swift */,
+				ED16851E2A536845005F7607 /* RandomNumView.swift */,
 				ED23B17A2A60806900D4877E /* RandomPhotoView.swift */,
 				EDB4691F2A5BBD530013EC9C /* CellView.swift */,
+				ED719D6D2A6524410077D462 /* ImageCellView.swift */,
 				ED0BA7C52A57489D00474F06 /* ViewModifer.swift */,
 				EDEFB9D42A5EDB15001FCEC8 /* FirstView.swift */,
+				ED719D6B2A651D050077D462 /* ImagePicker.swift */,
 				EDCD1A902A54956900BB2F0F /* RandomNums.swift */,
 				EDCD1A922A549CAE00BB2F0F /* RandomNumViewModel.swift */,
 				ED1685202A536847005F7607 /* Assets.xcassets */,
@@ -158,9 +164,11 @@
 				EDEFB9D52A5EDB15001FCEC8 /* FirstView.swift in Sources */,
 				ED0BA7C62A57489D00474F06 /* ViewModifer.swift in Sources */,
 				EDCD1A932A549CAE00BB2F0F /* RandomNumViewModel.swift in Sources */,
+				ED719D6C2A651D050077D462 /* ImagePicker.swift in Sources */,
+				ED719D6E2A6524410077D462 /* ImageCellView.swift in Sources */,
 				EDB469202A5BBD530013EC9C /* CellView.swift in Sources */,
 				EDCD1A912A54956900BB2F0F /* RandomNums.swift in Sources */,
-				ED16851F2A536845005F7607 /* ContentView.swift in Sources */,
+				ED16851F2A536845005F7607 /* RandomNumView.swift in Sources */,
 				ED23B17B2A60806900D4877E /* RandomPhotoView.swift in Sources */,
 				ED16851D2A536845005F7607 /* Random_NumsApp.swift in Sources */,
 			);
@@ -219,6 +227,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Камера используется для выбора из рандомных снимков";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -273,6 +282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Камера используется для выбора из рандомных снимков";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

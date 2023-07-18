@@ -16,15 +16,13 @@ struct CellView: View {
         VStack {
                 Text(number)
                 .font(.custom("Hex", size: 30))
-        }.frame(width: 120, height: 50, alignment: .center)
+        }.frame(width: 100, height: 100, alignment: .center)
         .background(Color(.white))
-        .cornerRadius(10)
     }
-    
 }
 
 struct CellView_Previews: PreviewProvider {
     static var previews: some View {
-        CellView(number: "")
+        CellView(number: "3")
     }
 }

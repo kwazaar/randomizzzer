@@ -7,13 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct RandomNumView: View {
     
     @StateObject var viewModel: RandomNumViewModel
     @State var textFieldMin = ""
     @State var textFieldMax = ""
     @State private var isShowAlert = false
     @State private var isShowNum = false
+    @State private var isShowEmptyTextField = false
     @FocusState private var keyIsFocused: Bool
     @Environment(\.dismiss) var dismiss
     
@@ -77,44 +78,36 @@ struct ContentView: View {
                             }.modifier(customTextFieldViewModifer(roundedCornes: 15, startColor: .white, endColor:  Color(hue: 1.0, saturation: 0.0, brightness: 0.9), textColor: Color.gray))
                             
                         }
-                        Button {
-                            viewModel.randomNums.minNums = Int(textFieldMin) ?? 1
-                            viewModel.randomNums.maxNums = Int(textFieldMax) ?? 100
-                            
-                            if viewModel.randomNums.minNums >= viewModel.randomNums.maxNums {
-                                viewModel.randomNums.minNums = 1
-                                viewModel.randomNums.maxNums = 100
-                                isShowAlert.toggle()
+                    }
+
+                        Button("Установить значение") {
+                            if textFieldMin.isEmpty && textFieldMax.isEmpty {
+                                isShowEmptyTextField.toggle()
+                            } else {
+                                if textFieldMin >= textFieldMax {
+                                    isShowAlert.toggle()
+                                } else {
+                                    viewModel.randomNums.minNums = Int(textFieldMin)!
+                                    viewModel.randomNums.maxNums = Int(textFieldMax)!
+                                }
                             }
-                            
                             textFieldMax = ""
                             textFieldMin = ""
                             keyIsFocused = false
-                            
                             viewModel.chekSizeNums()
-                        } label: {
-                            if textFieldMin.isEmpty && textFieldMax.isEmpty {
-                                Text("Значения по умолчанию")
-                                    .foregroundColor(.red)
-                                    .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
-                                    .background(Capsule().stroke(.red, lineWidth: 2))
-                            } else  {
-                                Text("Установить значение")
-                                    .foregroundColor(.green)
-                                    .padding(EdgeInsets(top: 8, leading: 30, bottom: 8, trailing: 30))
-                                    .background(Capsule().stroke(.green, lineWidth: 2))
-                                
-                            }
                         }
-                            
-                            .modifier(customButtonViewModifer(widthFrame: 350, textFont: .title))
-                            .alert("Вы ввели неверные значения минимума и максимума! \nПопробуйте снова.", isPresented: $isShowAlert, actions: {
-                                Button("Oк") { }
-                            })
-                            .padding()
-                        }
-
-                        
+                        .alert("Поле ввода значений пустое",isPresented: $isShowEmptyTextField, actions: {
+                            Button("Ввести значения") {}
+                            Button("Установить по умолчанию") {
+                                viewModel.randomNums.minNums = 1
+                                viewModel.randomNums.maxNums = 100
+                            }.foregroundColor(.red)
+                        })
+                        .alert("Вы ввели неверные значения минимума и максимума! \nПопробуйте снова.", isPresented: $isShowAlert, actions: { Button("Ок") { } })
+                        .modifier(customButtonViewModifer(widthFrame: UIScreen.main.bounds.width - 50, textFont: .title))
+                        .foregroundColor(.red)
+                        .background(Capsule().stroke(.red, lineWidth: 2))
+                    
                         Button {
                             viewModel.rollNum()
                             isShowNum = true
@@ -124,11 +117,9 @@ struct ContentView: View {
                             
                         } label: {
                             Text("Получить число")
-                        }.modifier(customButtonViewModifer(widthFrame: 300, textFont: .title))
+                        }.modifier(customButtonViewModifer(widthFrame: UIScreen.main.bounds.width - 50, textFont: .title))
                             .foregroundColor(.black)
-                            .padding(EdgeInsets(top: 8, leading: 15, bottom: 8, trailing: 15))
-                            .background(Capsule().stroke(.black, lineWidth: 4))
-                            .cornerRadius(30)
+                            .background(Capsule().stroke(.black, lineWidth: 2))
                         
                         
                         
@@ -139,6 +130,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: RandomNumViewModel(randomNums: RandomNumsModel(), num: 3, number: "3", angle: 0.0))
+        RandomNumView(viewModel: RandomNumViewModel(randomNums: RandomNumsModel(), num: 3, number: "3", angle: 0.0))
     }
 }

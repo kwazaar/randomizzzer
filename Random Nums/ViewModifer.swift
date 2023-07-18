@@ -24,6 +24,14 @@ struct customTextFieldViewModifer: ViewModifier {
 
     }
 }
+struct customButtonFirstViewModifer: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .background(AngularGradient(colors: [Color(red: 0.1, green: 0.1, blue: 0.1), .white] , center: .center))
+    }
+    
+    
+}
 
 struct customButtonViewModifer: ViewModifier {
     
@@ -34,7 +42,10 @@ struct customButtonViewModifer: ViewModifier {
         content
             .frame(width: widthFrame)
             .font(textFont)
+            .padding(EdgeInsets(top: 8, leading: 15, bottom: 8, trailing: 15))
+            .cornerRadius(30)
     }
     
     
 }
+
