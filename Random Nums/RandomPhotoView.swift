@@ -9,26 +9,35 @@ import SwiftUI
 
 struct RandomPhotoView: View {
     
+    @StateObject var viewModel: RandomPhotoViewModel
+    
     @State private var isShowGalery = false
     @State private var isShowCamera = false
-    @State var inputImage = UIImage()
-    @State var randomImage = [UIImage]()
+    @State private var isShowAlertNoAddPhoto = false
+//    @State var inputImage = UIImage()
+//    @State var randomImage = [UIImage]()
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         
         
-        VStack() {
+        VStack {
             Button("Вернуться в меню") {
                 self.dismiss()
             }.modifier(customTextFieldViewModifer(roundedCornes: 15, startColor: Color(hue: 1.0, saturation: 0.0, brightness: 0.9), endColor: .white, textColor: Color.gray))
-            Spacer()
+                .frame(width: UIScreen.main.bounds.width , alignment: .leading)
+            VStack{
+                Image(uiImage: viewModel.randomPhotos.showImage)
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(30)
+            }.frame(width: UIScreen.main.bounds.width - 50, height: UIScreen.main.bounds.width - 50)
             ScrollView(.horizontal){
                 LazyHStack() {
                     Text("Загруженные\nизображения:")
-                    if !randomImage.isEmpty {
-                        ForEach(0..<randomImage.count, id: \.description) { item in
-                            ImageCellView(image: $randomImage[item])
+                    if !viewModel.randomPhotos.randomImage.isEmpty {
+                        ForEach(0..<viewModel.randomPhotos.randomImage.count, id: \.description) { item in
+                            ImageCellView(image: $viewModel.randomPhotos.randomImage[item])
                         }
                     }
                 }
@@ -37,12 +46,24 @@ struct RandomPhotoView: View {
                 
             }.modifier(customTextFieldViewModifer(roundedCornes: 15, startColor: Color(hue: 1.0, saturation: 0.0, brightness: 0.9), endColor: .white, textColor: Color.gray))
             VStack {
+                Button("Рандомное изображение") {
+                    if viewModel.randomPhotos.randomImage.isEmpty {
+                        isShowAlertNoAddPhoto.toggle()
+                    } else {
+                        viewModel.spinPhoto()
+                    }
+                }.alert("Вы не выбрали ни одного фото", isPresented: $isShowAlertNoAddPhoto, actions: {
+                    Button("Ok, sorry:(") { }
+                })
+                .modifier(customButtonViewModifer(widthFrame: UIScreen.main.bounds.width - 50, textFont: .title))
+                    .background(Capsule().stroke(.black, lineWidth: 2))
+                    .foregroundColor(.black)
                 VStack {
-                    Button("Выбрать фото из галереи") {
+                    Button("Изображение из галереи") {
                         isShowGalery.toggle()
                     }
                     .sheet(isPresented: $isShowGalery) {
-                        ImagePicker(sourceType: .photoLibrary, selectedImage: self.$inputImage)
+                        ImagePicker(sourceType: .photoLibrary, selectedImage: self.$viewModel.randomPhotos.inputImage)
                     }
                     .modifier(customButtonViewModifer(widthFrame: UIScreen.main.bounds.width - 50, textFont: .title))
                     .foregroundColor(.black)
@@ -52,17 +73,17 @@ struct RandomPhotoView: View {
                         isShowCamera.toggle()
                     }
                     .sheet(isPresented: $isShowCamera) {
-                        ImagePicker(sourceType: .camera, selectedImage: self.$inputImage)
+                        ImagePicker(sourceType: .camera, selectedImage: self.$viewModel.randomPhotos.inputImage)
                     }
                     .modifier(customButtonViewModifer(widthFrame: UIScreen.main.bounds.width - 50, textFont: .title))
                     .background(Capsule().stroke(.black, lineWidth: 2))
                     .foregroundColor(.black)
 
                 }
-                .onChange(of: inputImage) { newValue in
-                    randomImage.append(newValue)
+                .onChange(of: viewModel.randomPhotos.inputImage) { newValue in
+                    viewModel.randomPhotos.randomImage.append(newValue)
                 }
-//                Button
+                
             }
         }
     }
@@ -72,6 +93,6 @@ struct RandomPhotoView: View {
 
 struct RandomPhotoView_Previews: PreviewProvider {
     static var previews: some View {
-        RandomPhotoView()
+        RandomPhotoView(viewModel: RandomPhotoViewModel(randomPhotos: RandomPhotoModel(), inputImage: UIImage()))
     }
 }

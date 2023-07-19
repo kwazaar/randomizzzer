@@ -49,10 +49,11 @@ class RandomNumViewModel: ObservableObject {
     
     func chekSizeNums () {
         
-        if randomNums.maxNums >= 9999 {
+        if randomNums.maxNums >= 1000 {
             randomNums.sizeFontMax = randomNums.sizeFontMax / 2
+            
         } else if randomNums.maxNums >= 100000 {
-            randomNums.sizeFontMax = randomNums.sizeFontMax / 3
+            randomNums.sizeFontMax = randomNums.sizeFontMax / 4
         } else {
             randomNums.sizeFontMax = 150
         }

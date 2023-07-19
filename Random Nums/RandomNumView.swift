@@ -27,8 +27,6 @@ struct RandomNumView: View {
                     Button("Вернуться в меню") {
                         self.dismiss()
                     }
-                    .frame(height: 1)
-                    .padding()
                 }.modifier(customTextFieldViewModifer(roundedCornes: 15, startColor: Color(hue: 1.0, saturation: 0.0, brightness: 0.9), endColor: .white, textColor: Color.gray))
                     .frame(width: UIScreen.main.bounds.width , alignment: .leading)
                 
@@ -81,7 +79,7 @@ struct RandomNumView: View {
                     }
 
                         Button("Установить значение") {
-                            if textFieldMin.isEmpty && textFieldMax.isEmpty {
+                            if textFieldMin.isEmpty || textFieldMax.isEmpty {
                                 isShowEmptyTextField.toggle()
                             } else {
                                 if textFieldMin >= textFieldMax {

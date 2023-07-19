@@ -16,8 +16,11 @@ struct CellView: View {
         VStack {
                 Text(number)
                 .font(.custom("Hex", size: 30))
-        }.frame(width: 100, height: 100, alignment: .center)
+                .padding(20)
+
+        }
         .background(Color(.white))
+        .cornerRadius(20)
     }
 }
 

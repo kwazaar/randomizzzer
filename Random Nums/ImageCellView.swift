@@ -16,9 +16,9 @@ struct ImageCellView: View {
         VStack {
             Image(uiImage: image)
                 .resizable()
+                .scaledToFit()
                 .background(.gray)
-                .frame(width: UIScreen.main.bounds.width / 4 , height: UIScreen.main.bounds.height / 4)
-                .cornerRadius(20)
+                .cornerRadius(10)
         }
     }
 }
