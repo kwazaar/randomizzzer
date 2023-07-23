@@ -24,7 +24,7 @@ struct RandomNumView: View {
             
             VStack(alignment: .center) {
                 VStack(){
-                    Button("Вернуться в меню") {
+                    Button("Вернуться в главное меню") {
                         self.dismiss()
                     }
                 }.modifier(customTextFieldViewModifer(roundedCornes: 15, startColor: Color(hue: 1.0, saturation: 0.0, brightness: 0.9), endColor: .white, textColor: Color.gray))
@@ -99,12 +99,12 @@ struct RandomNumView: View {
                             Button("Установить по умолчанию") {
                                 viewModel.randomNums.minNums = 1
                                 viewModel.randomNums.maxNums = 100
-                            }.foregroundColor(.red)
+                            }
                         })
                         .alert("Вы ввели неверные значения минимума и максимума! \nПопробуйте снова.", isPresented: $isShowAlert, actions: { Button("Ок") { } })
                         .modifier(customButtonViewModifer(widthFrame: UIScreen.main.bounds.width - 50, textFont: .title))
-                        .foregroundColor(.red)
-                        .background(Capsule().stroke(.red, lineWidth: 2))
+                        .foregroundColor((textFieldMax.isEmpty && textFieldMin.isEmpty) ? .gray : .red)
+                        .background(Capsule().stroke((textFieldMax.isEmpty && textFieldMin.isEmpty) ? .gray : .red, lineWidth: 2))
                     
                         Button {
                             viewModel.rollNum()
@@ -116,8 +116,8 @@ struct RandomNumView: View {
                         } label: {
                             Text("Получить число")
                         }.modifier(customButtonViewModifer(widthFrame: UIScreen.main.bounds.width - 50, textFont: .title))
-                            .foregroundColor(.black)
-                            .background(Capsule().stroke(.black, lineWidth: 2))
+                            .foregroundColor(.green)
+                            .background(Capsule().stroke(.green, lineWidth: 2))
                         
                         
                         

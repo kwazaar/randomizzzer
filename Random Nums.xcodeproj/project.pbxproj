@@ -52,6 +52,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED0CFD682A6D27DF0092505D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDCD1A902A54956900BB2F0F /* RandomNumsModel.swift */,
+				EDBA4A7F2A6839B200E2CADA /* RandomPhotoModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		ED0CFD692A6D27F40092505D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EDCD1A922A549CAE00BB2F0F /* RandomNumViewModel.swift */,
+				EDBA4A812A683A6D00E2CADA /* RandomPhotoViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		ED0CFD6A2A6D28010092505D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDEFB9D42A5EDB15001FCEC8 /* FirstView.swift */,
+				ED16851E2A536845005F7607 /* RandomNumView.swift */,
+				ED23B17A2A60806900D4877E /* RandomPhotoView.swift */,
+				EDB4691F2A5BBD530013EC9C /* CellView.swift */,
+				ED719D6D2A6524410077D462 /* ImageCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		ED1685102A536845005F7607 = {
 			isa = PBXGroup;
 			children = (
@@ -72,16 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				ED16851C2A536845005F7607 /* Random_NumsApp.swift */,
-				ED16851E2A536845005F7607 /* RandomNumView.swift */,
-				EDCD1A922A549CAE00BB2F0F /* RandomNumViewModel.swift */,
-				EDCD1A902A54956900BB2F0F /* RandomNumsModel.swift */,
-				ED23B17A2A60806900D4877E /* RandomPhotoView.swift */,
-				EDBA4A812A683A6D00E2CADA /* RandomPhotoViewModel.swift */,
-				EDBA4A7F2A6839B200E2CADA /* RandomPhotoModel.swift */,
-				EDB4691F2A5BBD530013EC9C /* CellView.swift */,
-				ED719D6D2A6524410077D462 /* ImageCellView.swift */,
+				ED0CFD682A6D27DF0092505D /* Model */,
+				ED0CFD6A2A6D28010092505D /* View */,
+				ED0CFD692A6D27F40092505D /* ViewModel */,
 				ED0BA7C52A57489D00474F06 /* ViewModifer.swift */,
-				EDEFB9D42A5EDB15001FCEC8 /* FirstView.swift */,
 				ED719D6B2A651D050077D462 /* ImagePicker.swift */,
 				ED1685202A536847005F7607 /* Assets.xcassets */,
 				ED1685222A536847005F7607 /* Preview Content */,

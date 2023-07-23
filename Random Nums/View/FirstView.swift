@@ -39,7 +39,7 @@ struct FirstView: View {
                     isShowRandomPhoto.toggle()
                 }.foregroundColor(colorRandomPhoto)
                 .fullScreenCover(isPresented: $isShowRandomPhoto) {
-                    RandomPhotoView(viewModel: RandomPhotoViewModel(randomPhotos: RandomPhotoModel(), inputImage: UIImage()))
+                    RandomPhotoView(viewModel: RandomPhotoViewModel(randomPhotos: RandomPhotoModel(), anglePhoto: Double()))
                 }
                 .modifier(customButtonViewModifer(widthFrame: UIScreen.main.bounds.width - 50, textFont: .title2))
                 .padding(EdgeInsets(top: 8, leading: 5, bottom: 8, trailing: 5))
