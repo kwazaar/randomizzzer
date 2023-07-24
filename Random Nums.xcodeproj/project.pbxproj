@@ -13,6 +13,7 @@
 		ED1685212A536847005F7607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1685202A536847005F7607 /* Assets.xcassets */; };
 		ED1685242A536847005F7607 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1685232A536847005F7607 /* Preview Assets.xcassets */; };
 		ED23B17B2A60806900D4877E /* RandomPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED23B17A2A60806900D4877E /* RandomPhotoView.swift */; };
+		ED2C07FA2A6E3884005A0677 /* RandomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C07F92A6E3884005A0677 /* RandomMapView.swift */; };
 		ED719D6C2A651D050077D462 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED719D6B2A651D050077D462 /* ImagePicker.swift */; };
 		ED719D6E2A6524410077D462 /* ImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED719D6D2A6524410077D462 /* ImageCellView.swift */; };
 		EDB469202A5BBD530013EC9C /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4691F2A5BBD530013EC9C /* CellView.swift */; };
@@ -31,6 +32,7 @@
 		ED1685202A536847005F7607 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED1685232A536847005F7607 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ED23B17A2A60806900D4877E /* RandomPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoView.swift; sourceTree = "<group>"; };
+		ED2C07F92A6E3884005A0677 /* RandomMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMapView.swift; sourceTree = "<group>"; };
 		ED719D6B2A651D050077D462 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		ED719D6D2A6524410077D462 /* ImageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellView.swift; sourceTree = "<group>"; };
 		EDB4691F2A5BBD530013EC9C /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				EDEFB9D42A5EDB15001FCEC8 /* FirstView.swift */,
 				ED16851E2A536845005F7607 /* RandomNumView.swift */,
 				ED23B17A2A60806900D4877E /* RandomPhotoView.swift */,
+				ED2C07F92A6E3884005A0677 /* RandomMapView.swift */,
 				EDB4691F2A5BBD530013EC9C /* CellView.swift */,
 				ED719D6D2A6524410077D462 /* ImageCellView.swift */,
 			);
@@ -203,6 +206,7 @@
 				EDBA4A802A6839B200E2CADA /* RandomPhotoModel.swift in Sources */,
 				ED23B17B2A60806900D4877E /* RandomPhotoView.swift in Sources */,
 				ED16851D2A536845005F7607 /* Random_NumsApp.swift in Sources */,
+				ED2C07FA2A6E3884005A0677 /* RandomMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,11 +340,13 @@
 				DEVELOPMENT_TEAM = V5U2P47B4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Камера используется для выбора из рандомных снимков";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Это приложение позволяет отслеживать интересные места";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -369,11 +375,13 @@
 				DEVELOPMENT_TEAM = V5U2P47B4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Камера используется для выбора из рандомных снимков";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Это приложение позволяет отслеживать интересные места";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

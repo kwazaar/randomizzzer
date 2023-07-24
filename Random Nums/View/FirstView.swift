@@ -10,9 +10,9 @@ import SwiftUI
 struct FirstView: View {
     @State var isShowRandomNums = false
     @State var isShowRandomPhoto = false
-    @State var color = Color(red: Double.random(in: 0.8...1), green: Double.random(in: 0...1), blue: Double.random(in: 0...1))
-    @State var colorRandomNums = Color(red: Double.random(in: 0.8...1), green: Double.random(in: 0...1), blue: Double.random(in: 0...1))
-    @State var colorRandomPhoto = Color(red: Double.random(in: 0.8...1), green: Double.random(in: 0...1), blue: Double.random(in: 0...1))
+    @State var isShowRandomMapMark = false
+    @State var color = Color(red: Double.random(in: 0.8...1), green: Double.random(in: 0...0.5), blue: Double.random(in: 0...0.5))
+
     var body: some View {
             VStack {
                 VStack {
@@ -26,7 +26,7 @@ struct FirstView: View {
                 .padding()
                 Button("Рандомные числа") {
                     isShowRandomNums.toggle()
-                }.foregroundColor(colorRandomNums)
+                }.foregroundColor(color)
                 .fullScreenCover(isPresented: $isShowRandomNums) {
                     RandomNumView(viewModel: RandomNumViewModel(randomNums: RandomNumsModel(), num: 0, number: "3", angle: 0.0))
                 }
@@ -35,12 +35,23 @@ struct FirstView: View {
                 .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.9))
                 .cornerRadius(50)
                 
-                Button("Выбрать рандомные фото") {
+                Button("Рандомные фото") {
                     isShowRandomPhoto.toggle()
-                }.foregroundColor(colorRandomPhoto)
+                }.foregroundColor(color)
                 .fullScreenCover(isPresented: $isShowRandomPhoto) {
                     RandomPhotoView(viewModel: RandomPhotoViewModel(randomPhotos: RandomPhotoModel(), anglePhoto: Double()))
                 }
+                .modifier(customButtonViewModifer(widthFrame: UIScreen.main.bounds.width - 50, textFont: .title2))
+                .padding(EdgeInsets(top: 8, leading: 5, bottom: 8, trailing: 5))
+                .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.9))
+                .cornerRadius(50)
+                
+                Button("Рандомная точка карты") {
+                    isShowRandomMapMark.toggle()
+                }.foregroundColor(color)
+                .fullScreenCover(isPresented: $isShowRandomMapMark, content: {
+                    RandomMapView()
+                })
                 .modifier(customButtonViewModifer(widthFrame: UIScreen.main.bounds.width - 50, textFont: .title2))
                 .padding(EdgeInsets(top: 8, leading: 5, bottom: 8, trailing: 5))
                 .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.9))

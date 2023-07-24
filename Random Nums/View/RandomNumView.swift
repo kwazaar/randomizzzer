@@ -29,8 +29,7 @@ struct RandomNumView: View {
                     }
                 }.modifier(customTextFieldViewModifer(roundedCornes: 15, startColor: Color(hue: 1.0, saturation: 0.0, brightness: 0.9), endColor: .white, textColor: Color.gray))
                     .frame(width: UIScreen.main.bounds.width , alignment: .leading)
-                
-                
+                Spacer()
                 VStack {
                     
                         if isShowNum {
@@ -82,7 +81,9 @@ struct RandomNumView: View {
                             if textFieldMin.isEmpty || textFieldMax.isEmpty {
                                 isShowEmptyTextField.toggle()
                             } else {
-                                if textFieldMin >= textFieldMax {
+                                viewModel.randomNums.intTextFieldMin = Int(textFieldMin)!
+                                viewModel.randomNums.intTextFieldMax = Int(textFieldMax)!
+                                if viewModel.randomNums.intTextFieldMin >= viewModel.randomNums.intTextFieldMax {
                                     isShowAlert.toggle()
                                 } else {
                                     viewModel.randomNums.minNums = Int(textFieldMin)!

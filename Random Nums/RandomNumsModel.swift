@@ -19,6 +19,8 @@ struct RandomNumsModel {
     var randomNum: Int {
         get { Int.random(in: minNums...maxNums) }
     }
+    var intTextFieldMin = 0
+    var intTextFieldMax = 0
 
 }
 
