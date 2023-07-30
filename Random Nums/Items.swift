@@ -12,4 +12,13 @@ struct Items: Decodable {
     
     let items : [Coordinate]
     
+    struct Coordinate: Decodable {
+        
+        let lat: Double
+        let lon: Double
+        let utm: String
+        let wsg: String
+        
+    }
+    
 }
