@@ -10,14 +10,21 @@ import MapKit
 
 struct RandomMapView: View {
     
-    @StateObject var viewModelMap: RandomMapViewModel
+    @StateObject var viewModelMap = RandomMapViewModel()
     @State var coordinate : Items.Coordinate?
     
     @State var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 55.755969, longitude: 37.617386), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     @Environment(\.dismiss) var dismiss
     @State var textCoordinate = ""
     
+    
+    
+    init() {
+        viewModelMap.checkLocationIsEnable()
+    }
+    
     var body: some View {
+        
         ZStack(alignment: .topLeading) {
             Map(coordinateRegion: $mapRegion, showsUserLocation: true)
                 .ignoresSafeArea(.all)
@@ -27,8 +34,8 @@ struct RandomMapView: View {
                         self.dismiss()
                     }.modifier(customTextFieldViewModifer(roundedCornes: 15, startColor: Color(hue: 1.0, saturation: 0.0, brightness: 0.9), endColor: .white, textColor: Color.gray))
                         .frame(width: UIScreen.main.bounds.width / 2, alignment: .leading)
-                    Button("Определить местоположение") {
-                        print("My location")
+                    Button("Вернуться к моей геолокации") {
+                        self.mapRegion = viewModelMap.region
                     }.modifier(customTextFieldViewModifer(roundedCornes: 15, startColor: .white , endColor: Color(hue: 1.0, saturation: 0.0, brightness: 0.9), textColor: Color.gray))
                         .frame(width: UIScreen.main.bounds.width / 2, alignment: .trailing)
                 }
@@ -57,6 +64,6 @@ struct RandomMapView: View {
 
 struct RandomMapView_Previews: PreviewProvider {
     static var previews: some View {
-        RandomMapView(viewModelMap: RandomMapViewModel(randomMap: RandomMapModel()))
+        RandomMapView()
     }
 }

@@ -18,6 +18,7 @@
 		ED31BDD32A73B8B600E0340A /* RandomMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31BDD22A73B8B600E0340A /* RandomMapViewModel.swift */; };
 		ED719D6C2A651D050077D462 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED719D6B2A651D050077D462 /* ImagePicker.swift */; };
 		ED719D6E2A6524410077D462 /* ImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED719D6D2A6524410077D462 /* ImageCellView.swift */; };
+		EDAE05422A779E3100EB9A20 /* Random_NumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAE05412A779E3100EB9A20 /* Random_NumsTests.swift */; };
 		EDB25F172A71ABA90048E268 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB25F162A71ABA90048E268 /* Items.swift */; };
 		EDB469202A5BBD530013EC9C /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4691F2A5BBD530013EC9C /* CellView.swift */; };
 		EDBA4A802A6839B200E2CADA /* RandomPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA4A7F2A6839B200E2CADA /* RandomPhotoModel.swift */; };
@@ -27,6 +28,16 @@
 		EDD254512A76D01C0051AE71 /* NetworkingServiceWithCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD254502A76D01C0051AE71 /* NetworkingServiceWithCompletion.swift */; };
 		EDEFB9D52A5EDB15001FCEC8 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEFB9D42A5EDB15001FCEC8 /* FirstView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDAE05432A779E3100EB9A20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED1685112A536845005F7607 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED1685182A536845005F7607;
+			remoteInfo = "Random Nums";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		ED0BA7C52A57489D00474F06 /* ViewModifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifer.swift; sourceTree = "<group>"; };
@@ -41,6 +52,8 @@
 		ED31BDD22A73B8B600E0340A /* RandomMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMapViewModel.swift; sourceTree = "<group>"; };
 		ED719D6B2A651D050077D462 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		ED719D6D2A6524410077D462 /* ImageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellView.swift; sourceTree = "<group>"; };
+		EDAE053F2A779E3100EB9A20 /* Random NumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Random NumsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDAE05412A779E3100EB9A20 /* Random_NumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random_NumsTests.swift; sourceTree = "<group>"; };
 		EDB25F162A71ABA90048E268 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		EDB4691F2A5BBD530013EC9C /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		EDBA4A7F2A6839B200E2CADA /* RandomPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoModel.swift; sourceTree = "<group>"; };
@@ -53,6 +66,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		ED1685162A536845005F7607 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDAE053C2A779E3100EB9A20 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -100,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				ED16851B2A536845005F7607 /* Random Nums */,
+				EDAE05402A779E3100EB9A20 /* Random NumsTests */,
 				ED16851A2A536845005F7607 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				ED1685192A536845005F7607 /* Random Nums.app */,
+				EDAE053F2A779E3100EB9A20 /* Random NumsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +154,14 @@
 				ED1685232A536847005F7607 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EDAE05402A779E3100EB9A20 /* Random NumsTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDAE05412A779E3100EB9A20 /* Random_NumsTests.swift */,
+			);
+			path = "Random NumsTests";
 			sourceTree = "<group>";
 		};
 		EDD2544F2A76CFEB0051AE71 /* Service */ = {
@@ -166,6 +196,24 @@
 			productReference = ED1685192A536845005F7607 /* Random Nums.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EDAE053E2A779E3100EB9A20 /* Random NumsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDAE05472A779E3100EB9A20 /* Build configuration list for PBXNativeTarget "Random NumsTests" */;
+			buildPhases = (
+				EDAE053B2A779E3100EB9A20 /* Sources */,
+				EDAE053C2A779E3100EB9A20 /* Frameworks */,
+				EDAE053D2A779E3100EB9A20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDAE05442A779E3100EB9A20 /* PBXTargetDependency */,
+			);
+			name = "Random NumsTests";
+			productName = "Random NumsTests";
+			productReference = EDAE053F2A779E3100EB9A20 /* Random NumsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -178,6 +226,10 @@
 				TargetAttributes = {
 					ED1685182A536845005F7607 = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					EDAE053E2A779E3100EB9A20 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = ED1685182A536845005F7607;
 					};
 				};
 			};
@@ -197,6 +249,7 @@
 			projectRoot = "";
 			targets = (
 				ED1685182A536845005F7607 /* Random Nums */,
+				EDAE053E2A779E3100EB9A20 /* Random NumsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -208,6 +261,13 @@
 			files = (
 				ED1685242A536847005F7607 /* Preview Assets.xcassets in Resources */,
 				ED1685212A536847005F7607 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDAE053D2A779E3100EB9A20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +298,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDAE053B2A779E3100EB9A20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDAE05422A779E3100EB9A20 /* Random_NumsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDAE05442A779E3100EB9A20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED1685182A536845005F7607 /* Random Nums */;
+			targetProxy = EDAE05432A779E3100EB9A20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		ED1685252A536847005F7607 /* Debug */ = {
@@ -292,6 +368,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Камера используется для выбора из рандомных снимков";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = 123;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Добавляю 3";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Добавляю 2";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Геопозиция используется для поиска вашего месторасположения";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -347,6 +427,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Камера используется для выбора из рандомных снимков";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = 123;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Добавляю 3";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Добавляю 2";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Геопозиция используется для поиска вашего месторасположения";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -369,6 +453,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Камера используется для выбора из рандомных снимков";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Разрешить определение месторасположения";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = 123;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Добавляю 3";
+				INFOPLIST_KEY_NSLocationUsageDescription = "добавляю 2";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Это приложение позволяет отслеживать интересные места";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -404,6 +492,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Камера используется для выбора из рандомных снимков";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Разрешить определение месторасположения";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = 123;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Добавляю 3";
+				INFOPLIST_KEY_NSLocationUsageDescription = "добавляю 2";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Это приложение позволяет отслеживать интересные места";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -427,6 +519,42 @@
 			};
 			name = Release;
 		};
+		EDAE05452A779E3100EB9A20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V5U2P47B4Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "maxOS.Random-NumsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Random Nums.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Random Nums";
+			};
+			name = Debug;
+		};
+		EDAE05462A779E3100EB9A20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V5U2P47B4Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "maxOS.Random-NumsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Random Nums.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Random Nums";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -444,6 +572,15 @@
 			buildConfigurations = (
 				ED1685282A536847005F7607 /* Debug */,
 				ED1685292A536847005F7607 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDAE05472A779E3100EB9A20 /* Build configuration list for PBXNativeTarget "Random NumsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDAE05452A779E3100EB9A20 /* Debug */,
+				EDAE05462A779E3100EB9A20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

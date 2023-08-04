@@ -50,7 +50,7 @@ struct FirstView: View {
                     isShowRandomMapMark.toggle()
                 }.foregroundColor(color)
                 .fullScreenCover(isPresented: $isShowRandomMapMark, content: {
-                    RandomMapView(viewModelMap: RandomMapViewModel(randomMap: RandomMapModel()))
+                    RandomMapView()
                 })
                 .modifier(customButtonViewModifer(widthFrame: UIScreen.main.bounds.width - 50, textFont: .title2))
                 .padding(EdgeInsets(top: 8, leading: 5, bottom: 8, trailing: 5))
