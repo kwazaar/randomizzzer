@@ -10,6 +10,16 @@ import Combine
 
 
 struct RandomMapModel {
+    var range = 2.0
+    var randomRangeX: Double {
+        return Double(.random(in: -0.45...0.45))
+    }
+    var randomRangeY: Double {
+        return Double(.random(in: -0.45...0.45))
+    }
+    var multiplierLatitude: Double = 0.009
+    var multiplierLongitude: Double = 0.016
+    
 }
 
 

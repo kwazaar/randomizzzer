@@ -19,6 +19,7 @@
 		ED719D6C2A651D050077D462 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED719D6B2A651D050077D462 /* ImagePicker.swift */; };
 		ED719D6E2A6524410077D462 /* ImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED719D6D2A6524410077D462 /* ImageCellView.swift */; };
 		EDAE05422A779E3100EB9A20 /* Random_NumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAE05412A779E3100EB9A20 /* Random_NumsTests.swift */; };
+		EDB146742A80149600998982 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB146732A80149600998982 /* MapPin.swift */; };
 		EDB25F172A71ABA90048E268 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB25F162A71ABA90048E268 /* Items.swift */; };
 		EDB469202A5BBD530013EC9C /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4691F2A5BBD530013EC9C /* CellView.swift */; };
 		EDBA4A802A6839B200E2CADA /* RandomPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBA4A7F2A6839B200E2CADA /* RandomPhotoModel.swift */; };
@@ -54,6 +55,7 @@
 		ED719D6D2A6524410077D462 /* ImageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellView.swift; sourceTree = "<group>"; };
 		EDAE053F2A779E3100EB9A20 /* Random NumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Random NumsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDAE05412A779E3100EB9A20 /* Random_NumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random_NumsTests.swift; sourceTree = "<group>"; };
+		EDB146732A80149600998982 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		EDB25F162A71ABA90048E268 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		EDB4691F2A5BBD530013EC9C /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		EDBA4A7F2A6839B200E2CADA /* RandomPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoModel.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				EDBA4A7F2A6839B200E2CADA /* RandomPhotoModel.swift */,
 				ED31BDD02A73B80500E0340A /* RandomMapModel.swift */,
 				EDB25F162A71ABA90048E268 /* Items.swift */,
+				EDB146732A80149600998982 /* MapPin.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				EDCD1A912A54956900BB2F0F /* RandomNumsModel.swift in Sources */,
 				ED16851F2A536845005F7607 /* RandomNumView.swift in Sources */,
 				EDBA4A802A6839B200E2CADA /* RandomPhotoModel.swift in Sources */,
+				EDB146742A80149600998982 /* MapPin.swift in Sources */,
 				ED23B17B2A60806900D4877E /* RandomPhotoView.swift in Sources */,
 				ED16851D2A536845005F7607 /* Random_NumsApp.swift in Sources */,
 				ED31BDD12A73B80500E0340A /* RandomMapModel.swift in Sources */,
