@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FirstView: View {
+    @StateObject var locationManager = LocationManager()
     @State var isShowRandomNums = false
     @State var isShowRandomPhoto = false
     @State var isShowRandomMapMark = false

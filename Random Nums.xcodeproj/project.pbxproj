@@ -19,6 +19,9 @@
 		ED719D6C2A651D050077D462 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED719D6B2A651D050077D462 /* ImagePicker.swift */; };
 		ED719D6E2A6524410077D462 /* ImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED719D6D2A6524410077D462 /* ImageCellView.swift */; };
 		EDAE05422A779E3100EB9A20 /* Random_NumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAE05412A779E3100EB9A20 /* Random_NumsTests.swift */; };
+		EDB07B232A8392DD00151593 /* ViewMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB07B222A8392DD00151593 /* ViewMap.swift */; };
+		EDB07B252A83A77D00151593 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB07B242A83A77D00151593 /* LocationManager.swift */; };
+		EDB07B2A2A83C87F00151593 /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB07B292A83C87F00151593 /* MKCoordinateRegion+Extensions.swift */; };
 		EDB146742A80149600998982 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB146732A80149600998982 /* MapPin.swift */; };
 		EDB25F172A71ABA90048E268 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB25F162A71ABA90048E268 /* Items.swift */; };
 		EDB469202A5BBD530013EC9C /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4691F2A5BBD530013EC9C /* CellView.swift */; };
@@ -55,6 +58,9 @@
 		ED719D6D2A6524410077D462 /* ImageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellView.swift; sourceTree = "<group>"; };
 		EDAE053F2A779E3100EB9A20 /* Random NumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Random NumsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDAE05412A779E3100EB9A20 /* Random_NumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random_NumsTests.swift; sourceTree = "<group>"; };
+		EDB07B222A8392DD00151593 /* ViewMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMap.swift; sourceTree = "<group>"; };
+		EDB07B242A83A77D00151593 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		EDB07B292A83C87F00151593 /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
 		EDB146732A80149600998982 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		EDB25F162A71ABA90048E268 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		EDB4691F2A5BBD530013EC9C /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 				ED2C07F92A6E3884005A0677 /* RandomMapView.swift */,
 				EDB4691F2A5BBD530013EC9C /* CellView.swift */,
 				ED719D6D2A6524410077D462 /* ImageCellView.swift */,
+				EDB07B222A8392DD00151593 /* ViewMap.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,12 +174,23 @@
 			path = "Random NumsTests";
 			sourceTree = "<group>";
 		};
+		EDB07B282A83C83700151593 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EDB07B292A83C87F00151593 /* MKCoordinateRegion+Extensions.swift */,
+			);
+			name = Extensions;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		EDD2544F2A76CFEB0051AE71 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				EDB07B282A83C83700151593 /* Extensions */,
 				ED0BA7C52A57489D00474F06 /* ViewModifer.swift */,
 				ED719D6B2A651D050077D462 /* ImagePicker.swift */,
 				EDD254502A76D01C0051AE71 /* NetworkingServiceWithCompletion.swift */,
+				EDB07B242A83A77D00151593 /* LocationManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -287,13 +305,16 @@
 				ED0BA7C62A57489D00474F06 /* ViewModifer.swift in Sources */,
 				EDCD1A932A549CAE00BB2F0F /* RandomNumViewModel.swift in Sources */,
 				ED719D6C2A651D050077D462 /* ImagePicker.swift in Sources */,
+				EDB07B232A8392DD00151593 /* ViewMap.swift in Sources */,
 				EDBA4A822A683A6D00E2CADA /* RandomPhotoViewModel.swift in Sources */,
 				ED719D6E2A6524410077D462 /* ImageCellView.swift in Sources */,
 				EDB469202A5BBD530013EC9C /* CellView.swift in Sources */,
 				EDCD1A912A54956900BB2F0F /* RandomNumsModel.swift in Sources */,
 				ED16851F2A536845005F7607 /* RandomNumView.swift in Sources */,
+				EDB07B252A83A77D00151593 /* LocationManager.swift in Sources */,
 				EDBA4A802A6839B200E2CADA /* RandomPhotoModel.swift in Sources */,
 				EDB146742A80149600998982 /* MapPin.swift in Sources */,
+				EDB07B2A2A83C87F00151593 /* MKCoordinateRegion+Extensions.swift in Sources */,
 				ED23B17B2A60806900D4877E /* RandomPhotoView.swift in Sources */,
 				ED16851D2A536845005F7607 /* Random_NumsApp.swift in Sources */,
 				ED31BDD12A73B80500E0340A /* RandomMapModel.swift in Sources */,
@@ -457,11 +478,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Камера используется для выбора из рандомных снимков";
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Разрешить определение месторасположения";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = 123;
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Добавляю 3";
-				INFOPLIST_KEY_NSLocationUsageDescription = "добавляю 2";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Это приложение позволяет отслеживать интересные места";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Приложению требуется доступ для определения вашего текущего месторасположения";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Приложению требуется доступ для определения вашего текущего месторасположения";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -496,11 +514,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Камера используется для выбора из рандомных снимков";
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Разрешить определение месторасположения";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = 123;
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Добавляю 3";
-				INFOPLIST_KEY_NSLocationUsageDescription = "добавляю 2";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Это приложение позволяет отслеживать интересные места";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Приложению требуется доступ для определения вашего текущего месторасположения";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Приложению требуется доступ для определения вашего текущего месторасположения";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

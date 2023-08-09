@@ -7,69 +7,72 @@
 
 import Foundation
 import MapKit
+import Combine
 
 
-class RandomMapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+class RandomMapViewModel: ObservableObject {
+    
+    private let locationManager: LocationManager
+    var cancelleble: AnyCancellable?
+    @Published var currentLocation: CLLocationCoordinate2D?
+    @Published var pins: [MapPin] = []
+    @Published var pin = MapPin()
+    @Published var coordinateItem: Items.Coordinate?
+    
     
     @Published var randomMap = RandomMapModel()
-    var locationManager = CLLocationManager()
     @Published var latitu = Double()
     @Published var longitu = Double()
-    
-    @Published var coordinate = [Items]()
-    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 55.755969, longitude: 37.617386), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
-    
-    func getLocation() {
-            let authStatus = locationManager.authorizationStatus
-            if authStatus == .denied {
-                locationManager.requestWhenInUseAuthorization()
-            }
-            
-            if let location = self.locationManager.location {
-                latitu = location.coordinate.latitude + (randomMap.multiplierLatitude * randomMap.randomRangeX * randomMap.range)
-                longitu = location.coordinate.longitude + (randomMap.multiplierLongitude * randomMap.randomRangeY * randomMap.range)
-            }
-            region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitu, longitude: longitu), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
-        }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let newLocation = locations.last!
-            print("Did update location \(newLocation)")
 
-    }
-    
-    
-    func checkLocationIsEnable() {
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager = CLLocationManager()
-            locationManager.delegate = self
-        } else {
-            print("Не создался менеджер")
-        }
-    }
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        checkLocationAuth()
-    }
-    
-    private func checkLocationAuth() {
+    init(){
+        locationManager = LocationManager()
         
-        switch locationManager.authorizationStatus {
-            
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-        case .restricted:
-            print("Ограничен")
-        case .denied:
-            print("Отключен")
-        case .authorizedAlways, .authorizedWhenInUse:
-            region = MKCoordinateRegion(center: locationManager.location!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
-        @unknown default:
-            break
+        cancelleble = locationManager.$location.sink { (location) in
+            if let location = location {
+                DispatchQueue.main.async {
+                    self.currentLocation = location.coordinate
+                }
+            }
         }
     }
-    
-    
-    
+    func getMyLocation() {
+        if let location = locationManager.location {
+                self.currentLocation = location.coordinate
+        }
+    }
+    func getMapPin() {
+        if let location = locationManager.location {
+            latitu = location.coordinate.latitude + (randomMap.multiplierLatitude * randomMap.randomRangeX * randomMap.range)
+            longitu = location.coordinate.longitude + (randomMap.multiplierLongitude * randomMap.randomRangeY * randomMap.range)
+            pin.coordinatePin = CLLocationCoordinate2D(latitude: latitu, longitude: longitu)
+            pins.append(pin)
+            if pins.count >= 2 {
+                pins.removeFirst()
+            }
+        }
+    }
+    func getMapRandomLocation() {
+        NetworkingServiceWithCompletion.shared.fetchData { result in
+            switch result {
+                
+            case .success(let coordinateData):
+                let coordinate = coordinateData.items[0]
+                self.coordinateItem = coordinate
+                if let latitude = self.coordinateItem?.lat, let longitude = self.coordinateItem?.lon {
+                    self.currentLocation?.latitude = latitude
+                    self.currentLocation?.longitude = longitude
+                    self.pin.coordinatePin = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                    self.pins.append(self.pin)
+                    if self.pins.count >= 2 {
+                        self.pins.removeFirst()
+                    }
+                }
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+                
+            }
+        }
+    }
     
     static let shared = RandomMapModel()
     

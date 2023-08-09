@@ -22,9 +22,3 @@ struct ImageCellView: View {
         }
     }
 }
-
-//struct ImageCellView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ImageCellView(image: image)
-//    }
-//}

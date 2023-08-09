@@ -11,5 +11,5 @@ import MapKit
 
 struct MapPin : Identifiable {
     let id = UUID()
-    var coordinatePin: CLLocationCoordinate2D
+    var coordinatePin = CLLocationCoordinate2D()
 }
