@@ -13,15 +13,14 @@
 		ED1685212A536847005F7607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1685202A536847005F7607 /* Assets.xcassets */; };
 		ED1685242A536847005F7607 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1685232A536847005F7607 /* Preview Assets.xcassets */; };
 		ED23B17B2A60806900D4877E /* RandomPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED23B17A2A60806900D4877E /* RandomPhotoView.swift */; };
+		ED2A4AAB2A8AC0F8002159CB /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A4AAA2A8AC0F8002159CB /* MKCoordinateRegion+Extensions.swift */; };
 		ED2C07FA2A6E3884005A0677 /* RandomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C07F92A6E3884005A0677 /* RandomMapView.swift */; };
 		ED31BDD12A73B80500E0340A /* RandomMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31BDD02A73B80500E0340A /* RandomMapModel.swift */; };
 		ED31BDD32A73B8B600E0340A /* RandomMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31BDD22A73B8B600E0340A /* RandomMapViewModel.swift */; };
 		ED719D6C2A651D050077D462 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED719D6B2A651D050077D462 /* ImagePicker.swift */; };
 		ED719D6E2A6524410077D462 /* ImageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED719D6D2A6524410077D462 /* ImageCellView.swift */; };
 		EDAE05422A779E3100EB9A20 /* Random_NumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAE05412A779E3100EB9A20 /* Random_NumsTests.swift */; };
-		EDB07B232A8392DD00151593 /* ViewMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB07B222A8392DD00151593 /* ViewMap.swift */; };
 		EDB07B252A83A77D00151593 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB07B242A83A77D00151593 /* LocationManager.swift */; };
-		EDB07B2A2A83C87F00151593 /* MKCoordinateRegion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB07B292A83C87F00151593 /* MKCoordinateRegion+Extensions.swift */; };
 		EDB146742A80149600998982 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB146732A80149600998982 /* MapPin.swift */; };
 		EDB25F172A71ABA90048E268 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB25F162A71ABA90048E268 /* Items.swift */; };
 		EDB469202A5BBD530013EC9C /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB4691F2A5BBD530013EC9C /* CellView.swift */; };
@@ -51,6 +50,7 @@
 		ED1685202A536847005F7607 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED1685232A536847005F7607 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ED23B17A2A60806900D4877E /* RandomPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoView.swift; sourceTree = "<group>"; };
+		ED2A4AAA2A8AC0F8002159CB /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
 		ED2C07F92A6E3884005A0677 /* RandomMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMapView.swift; sourceTree = "<group>"; };
 		ED31BDD02A73B80500E0340A /* RandomMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMapModel.swift; sourceTree = "<group>"; };
 		ED31BDD22A73B8B600E0340A /* RandomMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMapViewModel.swift; sourceTree = "<group>"; };
@@ -58,9 +58,7 @@
 		ED719D6D2A6524410077D462 /* ImageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellView.swift; sourceTree = "<group>"; };
 		EDAE053F2A779E3100EB9A20 /* Random NumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Random NumsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDAE05412A779E3100EB9A20 /* Random_NumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random_NumsTests.swift; sourceTree = "<group>"; };
-		EDB07B222A8392DD00151593 /* ViewMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMap.swift; sourceTree = "<group>"; };
 		EDB07B242A83A77D00151593 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		EDB07B292A83C87F00151593 /* MKCoordinateRegion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extensions.swift"; sourceTree = "<group>"; };
 		EDB146732A80149600998982 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		EDB25F162A71ABA90048E268 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		EDB4691F2A5BBD530013EC9C /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				ED2C07F92A6E3884005A0677 /* RandomMapView.swift */,
 				EDB4691F2A5BBD530013EC9C /* CellView.swift */,
 				ED719D6D2A6524410077D462 /* ImageCellView.swift */,
-				EDB07B222A8392DD00151593 /* ViewMap.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,19 +171,10 @@
 			path = "Random NumsTests";
 			sourceTree = "<group>";
 		};
-		EDB07B282A83C83700151593 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				EDB07B292A83C87F00151593 /* MKCoordinateRegion+Extensions.swift */,
-			);
-			name = Extensions;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		EDD2544F2A76CFEB0051AE71 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				EDB07B282A83C83700151593 /* Extensions */,
+				ED2A4AAA2A8AC0F8002159CB /* MKCoordinateRegion+Extensions.swift */,
 				ED0BA7C52A57489D00474F06 /* ViewModifer.swift */,
 				ED719D6B2A651D050077D462 /* ImagePicker.swift */,
 				EDD254502A76D01C0051AE71 /* NetworkingServiceWithCompletion.swift */,
@@ -305,16 +293,15 @@
 				ED0BA7C62A57489D00474F06 /* ViewModifer.swift in Sources */,
 				EDCD1A932A549CAE00BB2F0F /* RandomNumViewModel.swift in Sources */,
 				ED719D6C2A651D050077D462 /* ImagePicker.swift in Sources */,
-				EDB07B232A8392DD00151593 /* ViewMap.swift in Sources */,
 				EDBA4A822A683A6D00E2CADA /* RandomPhotoViewModel.swift in Sources */,
 				ED719D6E2A6524410077D462 /* ImageCellView.swift in Sources */,
 				EDB469202A5BBD530013EC9C /* CellView.swift in Sources */,
+				ED2A4AAB2A8AC0F8002159CB /* MKCoordinateRegion+Extensions.swift in Sources */,
 				EDCD1A912A54956900BB2F0F /* RandomNumsModel.swift in Sources */,
 				ED16851F2A536845005F7607 /* RandomNumView.swift in Sources */,
 				EDB07B252A83A77D00151593 /* LocationManager.swift in Sources */,
 				EDBA4A802A6839B200E2CADA /* RandomPhotoModel.swift in Sources */,
 				EDB146742A80149600998982 /* MapPin.swift in Sources */,
-				EDB07B2A2A83C87F00151593 /* MKCoordinateRegion+Extensions.swift in Sources */,
 				ED23B17B2A60806900D4877E /* RandomPhotoView.swift in Sources */,
 				ED16851D2A536845005F7607 /* Random_NumsApp.swift in Sources */,
 				ED31BDD12A73B80500E0340A /* RandomMapModel.swift in Sources */,

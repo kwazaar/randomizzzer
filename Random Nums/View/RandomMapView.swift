@@ -13,7 +13,6 @@ struct RandomMapView: View {
     
     @StateObject private var viewModelMap = RandomMapViewModel()
     @State private var userTrackingMode: MapUserTrackingMode = .follow
-
     @Environment(\.dismiss) var dismiss
     @State var textRadius = ""
     @State private var isShowDirection = false
@@ -24,7 +23,7 @@ struct RandomMapView: View {
         guard let coordinate = viewModelMap.currentLocation else {
             return .constant(MKCoordinateRegion.defaultRegion)
         }
-        return .constant(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)))
+        return .constant(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)))
     }
     
     var body: some View {
@@ -33,10 +32,11 @@ struct RandomMapView: View {
             
             Map(coordinateRegion: getRegion(), interactionModes: .all, showsUserLocation: true, userTrackingMode: $userTrackingMode, annotationItems: viewModelMap.pins) { pin in
                 MapAnnotation(coordinate: pin.coordinatePin) {
-                    Image("Marker")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 100, height: 100)
+                        Image("Marker2")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 100)
+                    
                 }
             }
             .ignoresSafeArea()
